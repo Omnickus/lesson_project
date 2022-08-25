@@ -13,7 +13,6 @@ class Test_service_management:
     @allure.description("Остановка сервиса")
     @allure.feature("Микросервисы")
     @allure.story("Остановка сервиса")
-    @allure.step
     @pytest.mark.parametrize("service", Service_management._one_service_at_a_time )
     def test_stop_services_at_a_time(self, driver, service):
         @log_decorator
@@ -24,7 +23,6 @@ class Test_service_management:
     @allure.description("Запуск сервиса")
     @allure.feature("Микросервисы")
     @allure.story("Запуск сервиса")
-    @allure.step
     @pytest.mark.parametrize("service", Service_management._one_service_at_a_time )
     def test_start_services_at_a_time(self, driver, service):
         @log_decorator

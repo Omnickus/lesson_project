@@ -1,6 +1,7 @@
 import config
 from src.base.base_page import Base_page
 import allure
+from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
 from src.base.constructor import Find_element    # Поиск элементов
@@ -159,6 +160,7 @@ class Supply_routes(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = test_name_for_route)
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось найти созданный маршрут').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path != None
@@ -239,6 +241,7 @@ class Supply_routes(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = text)
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось найти отредактированный маршрут').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path != None
@@ -268,6 +271,7 @@ class Supply_routes(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = text)
         if dinamic_path != None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось удалить маршрут').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path == None
@@ -323,6 +327,7 @@ class Supply_routes(Base_page):
             text = el.text
             if text != self.choose_route['counter_params'][param_2]['check']['meaning']:
                 name_screen = self.save_screen_shot
+                allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
                 Logger(f'{config.indicator_test_result_err} Маршрут для "{self.choose_route["counter_params"][param_2]["name"]}" не сохранился').errorlog
                 Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                 assert text == self.choose_route['counter_params'][param_2]['check']['meaning']

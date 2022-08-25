@@ -1,6 +1,7 @@
 import config
 from src.base.base_page import Base_page
 import allure
+from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
 from src.base.constructor import Find_element    # Поиск элементов
@@ -75,6 +76,7 @@ class Allowed_addresses(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = text)
         if dinamic_path != None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось удалить маршрут').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path == None
@@ -115,6 +117,7 @@ class Allowed_addresses(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = kwargs['test_data']['test_data']['test_data_edit']['login'])
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось найти пользователя').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path != None
@@ -160,6 +163,7 @@ class Allowed_addresses(Base_page):
             dinamic_path = Find_element(driver = self._driver).dynamic_path(text = test_data['test_data']['login'])
             if dinamic_path == None:
                 name_screen = self.save_screen_shot
+                allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
                 Logger(f'{config.indicator_test_result_err} Не удалось найти пользователя').errorlog
                 Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                 assert dinamic_path != None
@@ -170,6 +174,7 @@ class Allowed_addresses(Base_page):
 
         except Exception as e:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Непредвиденная ошибка {e}').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             self.del_localuser(text = [test_data['test_data']['login'], test_data['test_data']['test_data_edit']['login']], flag = False)

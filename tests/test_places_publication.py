@@ -14,7 +14,6 @@ class Test_places_publication:
     @allure.description("Создание/Редактирование/Удаление места публикации")
     @allure.feature("Места публикации")
     @allure.story("Создание/Редактирование/Удаление места публикации")
-    @allure.step
     @pytest.mark.parametrize('test_data', Places_publication.params_create_palace_publication)
     def test_create_place_publication(self, driver, test_data):
         @log_decorator

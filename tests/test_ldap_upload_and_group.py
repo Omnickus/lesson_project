@@ -11,7 +11,6 @@ class Test_Ldap_upload_and_group:
     @allure.description("Выгрузка группы LDAP")
     @allure.feature("Группы LDAP")
     @allure.story("Выгрузка группы LDAP")
-    @allure.step
     @pytest.mark.parametrize('name_group', Ldap_upload_and_group.name_group_for_upload)
     def test_creat_new_allowed_addresses(self, driver, name_group):
         @log_decorator

@@ -13,7 +13,6 @@ class Test_system:
     @allure.description("Проверка полей на вкладке 'Система' на корректные данные")
     @allure.feature("Система")
     @allure.story("Проверка полей на вкладке 'Система' на корректные данные")
-    @allure.step
     @pytest.mark.parametrize("name_test, path, test_data", System.param )
     def test_system_page_correct_tests(self, driver, name_test, path, test_data):
         driver.get(driver.url + Url_page.system_page)
@@ -26,7 +25,6 @@ class Test_system:
     @allure.description("Проверка полей на вкладке 'Система' на строковые данные")
     @allure.feature("Система")
     @allure.story("Проверка полей на вкладке 'Система' на строковые данные")
-    @allure.step
     @pytest.mark.parametrize("name_test, path, test_data", System.param )
     def test_system_page_string_tests(self, driver, name_test, path, test_data):
         driver.get(driver.url + Url_page.system_page)
@@ -39,7 +37,6 @@ class Test_system:
     @allure.description("Проверка полей на вкладке 'Система' на числовые данные")
     @allure.feature("Система")
     @allure.story("Проверка полей на вкладке 'Система' на числовые данные")
-    @allure.step
     @pytest.mark.parametrize("name_test, path, test_data", System.param )
     def test_system_page_integer_tests(self, driver, name_test, path, test_data):
         driver.get(driver.url + Url_page.system_page)
@@ -52,7 +49,6 @@ class Test_system:
     @allure.description("Проверка полей на вкладке 'Система' с отсутствием данных")
     @allure.feature("Система")
     @allure.story("Проверка полей на вкладке 'Система' с отсутствием данных")
-    @allure.step
     @pytest.mark.parametrize("name_test, path, test_data", System.param )
     def test_system_page_empty_tests(self, driver, name_test, path, test_data):
         driver.get(driver.url + Url_page.system_page)
@@ -65,7 +61,6 @@ class Test_system:
     @allure.description("Проверка полей на вкладке 'Система' на спец символы")
     @allure.feature("Система")
     @allure.story("Проверка полей на вкладке 'Система' на спец символы")
-    @allure.step
     @pytest.mark.parametrize("name_test, path, test_data", System.param )
     def test_system_page_special_char_tests(self, driver, name_test, path, test_data):
         driver.get(driver.url + Url_page.system_page)

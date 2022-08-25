@@ -1,6 +1,7 @@
 import config
 from src.base.base_page import Base_page
 import allure
+from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
 from src.base.constructor import Find_element    # Поиск элементов
@@ -122,6 +123,7 @@ class Service_management(Base_page):
         Logger(f'{config.indicator_test_step} Читаю сообщение').infolog
         if el.text != self.__text_status_stop:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Сервис не остановлен').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert el.text == self.__text_status_stop
@@ -144,6 +146,7 @@ class Service_management(Base_page):
         Logger(f'{config.indicator_test_step} Читаю сообщение').infolog
         if el.text != self.__text_status_start:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name=name_screen, attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Сервис не запустился').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert el.text == self.__text_status_start

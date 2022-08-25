@@ -15,7 +15,6 @@ class Test_localuser:
     @allure.description("Создание\Удаление локального пользователя")
     @allure.feature("Локальные пользователи")
     @allure.story("Создание\Удаление локального пользователя")
-    @allure.step
     @pytest.mark.parametrize('test_name, path, test_data', Localuser.param_create_new_user)
     def test_creat_new_local_user(self, driver, test_name, path, test_data):
         @log_decorator
@@ -31,7 +30,6 @@ class Test_localuser:
     @allure.description("Создание\Редактирование\Удаление локального пользователя")
     @allure.feature("Локальные пользователи")
     @allure.story("Создание\Редактирование\Удаление локального пользователя")
-    @allure.step
     @pytest.mark.parametrize('test_name, path, test_data', Localuser.param_create_new_user)
     def test_edit_local_user(self, driver, test_name, path, test_data):
         @log_decorator

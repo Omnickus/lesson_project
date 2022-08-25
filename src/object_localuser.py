@@ -3,6 +3,7 @@ import random
 import config
 from src.base.base_page import Base_page
 import allure
+from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
 from src.base.constructor import Find_element    # Поиск элементов
@@ -83,6 +84,7 @@ class Localuser(Base_page):
             if flag == False:
                 if counter > len(text):
                     name_screen = self.save_screen_shot
+                    allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
                     Logger(f'{config.indicator_test_result_err} Пользователя нет на странице').errorlog
                     Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                     assert dinamic_path == 1
@@ -114,6 +116,7 @@ class Localuser(Base_page):
             dinamic_path = Find_element(driver = self._driver).dynamic_path(text = user_text)
             if dinamic_path != None:
                 name_screen = self.save_screen_shot
+                allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
                 Logger(f'{config.indicator_test_result_err} Пользователь не удалён').errorlog
                 Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                 assert dinamic_path == None
@@ -170,6 +173,7 @@ class Localuser(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = test_data['test_data']['test_data_edit']['login'])
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось найти пользователя').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path != None
@@ -231,6 +235,7 @@ class Localuser(Base_page):
             dinamic_path = Find_element(driver = self._driver).dynamic_path(text = test_data['test_data']['login'])
             if dinamic_path == None:
                 name_screen = self.save_screen_shot
+                allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
                 Logger(f'{config.indicator_test_result_err} Не удалось найти пользователя').errorlog
                 Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                 assert dinamic_path != None
@@ -241,6 +246,7 @@ class Localuser(Base_page):
 
         except Exception as e:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Непредвиденная ошибка {e}').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             self.del_localuser(text = [test_data['test_data']['login'], test_data['test_data']['test_data_edit']['login']], flag = False)

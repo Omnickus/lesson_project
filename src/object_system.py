@@ -2,6 +2,7 @@ import config
 from src.base.base_page import Base_page
 import time
 import allure
+from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
 from src.base.constructor import Find_element    # Поиск элементов
@@ -592,6 +593,7 @@ class System(Base_page):
         but_save = Find_element(driver = self._driver, path = self.save_but, wtime = 10).by_xpath_to_be_visibility
         if but_save.is_enabled() != status:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Кнопка сохранить не соответствует ожиданиям от теста. Кнопка {but_save.is_enabled()}, ожидалось {status}').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert but_save.is_enabled() == status
@@ -613,6 +615,7 @@ class System(Base_page):
                 Logger(f'{config.indicator_test_step} Новые значения сохранились').infolog
             else:
                 name_screen = self.save_screen_shot
+                allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
                 Logger(f'{config.indicator_test_result_err} Новые значения не сохранились').errorlog
                 Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
                 assert new_value == text

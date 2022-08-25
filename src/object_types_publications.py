@@ -7,6 +7,7 @@ from src.base.constructor import Placeholder     # Взаимодействие 
 from src.base.constructor import Actions         # Разные действия
 from src.base.logger import Logger               # Логгер
 import allure
+from allure_commons.types import AttachmentType
 
 import random
 import time
@@ -125,6 +126,7 @@ class Types_publications(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = test_data['test_data']['name'])
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось найти созданный тип публикации').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path != None
@@ -155,6 +157,7 @@ class Types_publications(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = name)
         if dinamic_path != None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Не удалось удалить тип публикации').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             assert dinamic_path == None
@@ -218,6 +221,7 @@ class Types_publications(Base_page):
         dinamic_path = Find_element(driver = self._driver).dynamic_path(text = self.params_edit_publications['test_data']['name'])
         if dinamic_path == None:
             name_screen = self.save_screen_shot
+            allure.attach(self._driver.get_screenshot_as_png(), name='screen_shot', attachment_type=AttachmentType.PNG)
             Logger(f'{config.indicator_test_result_err} Тип публикации не отредактировался').errorlog
             Logger(f'{config.indicator_test_screen} Изображение: {name_screen}').errorlog
             self.delete_type_publications(name = name)

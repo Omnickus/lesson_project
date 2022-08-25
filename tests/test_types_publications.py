@@ -14,7 +14,6 @@ class Test_types_publications:
     @allure.description("Создание/Удаление типа публикации")
     @allure.feature("Типы публикаций")
     @allure.story("Создание/Удаление типа публикации")
-    @allure.step
     @pytest.mark.parametrize("path, test_data", Types_publications.params_create_publications )
     def test_create_type_publications(self, driver, path, test_data):
         driver.get(driver.url + Types_publications._url)
@@ -30,7 +29,6 @@ class Test_types_publications:
     @allure.description("Создание/Редактирование/Удаление типа публикации")
     @allure.feature("Типы публикаций")
     @allure.story("Создание/Редактирование/Удаление типа публикации")
-    @allure.step
     @pytest.mark.parametrize("path, test_data", Types_publications.params_create_publications )
     def test_edit_type_publications(self, driver, path, test_data):
         driver.get(driver.url + Types_publications._url)

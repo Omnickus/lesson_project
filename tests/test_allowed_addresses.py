@@ -12,7 +12,6 @@ class Test_allowed_addresses:
     @allure.description("Создание/Удаление разрешённого адреса")
     @allure.feature("Разрешённые адреса")
     @allure.story("Создание/Удаление разрешённого адреса")
-    @allure.step
     @pytest.mark.parametrize('test_name, path, test_data', Allowed_addresses.param_create_new_user)
     def test_creat_new_allowed_addresses(self, driver, test_name, path, test_data):
         @log_decorator
