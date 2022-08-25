@@ -55,34 +55,34 @@ def driver(request):
 
     if executor == None:
         if browser == "chrome":
-            service = ChromiumService(executable_path=drivers + "/chromedriver")
+            service = ChromiumService(executable_path=drivers + "chromedriver")
             try:
                 driver = webdriver.Chrome(service=service)
             except Exception as e:
                 options = webdriver.ChromeOptions()
-                driver_path = drivers + "/chrome/chromedriver"
+                driver_path = drivers + "chromedriver"
                 driver = webdriver.Chrome(  
                                         executable_path = driver_path,
                                         options = options
                                     )
         elif browser == "firefox":
-            service = FFService(executable_path=drivers + "/geckodriver")
+            service = FFService(executable_path=drivers + "geckodriver")
             try:
                 driver = webdriver.Firefox(service=service)
             except Exception as e:
                 options = webdriver.FirefoxOptions()
-                driver_path = drivers + "/geckodriver"
+                driver_path = drivers + "geckodriver"
                 driver = webdriver.Chrome(  
                                         executable_path = driver_path,
                                         options = options
                                     )
         elif browser == "Edge":
-            service = EdgeService(executable_path=drivers + "/edge")
+            service = EdgeService(executable_path=drivers + "edge")
             try:
                 driver = webdriver.Edge(service=service)
             except Exception as e:
                 options = webdriver.FirefoxOptions()
-                driver_path = driver + "/edge"
+                driver_path = driver + "edge"
                 driver = webdriver.Chrome(  
                                         executable_path = driver_path,
                                         options = options

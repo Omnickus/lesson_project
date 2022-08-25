@@ -1,9 +1,0 @@
-INFO     MPP-SELENIUM167400:logger.py:45 ==== НАЧАЛО ТЕСТА ====
-INFO     MPP-SELENIUM167400:logger.py:45 test_page: Страница 'места публикации'
-INFO     MPP-SELENIUM167400:logger.py:45 test_name: Создание нового места публикации
-INFO     MPP-SELENIUM167400:logger.py:45 test_param: Тестовое значение {'test_data': {'test_name': 'Seleniun_place_publication_16762', 'test_description': 'Seleniun_description_48546', 'test_type_publication': {'catalog': '//*[@id="menu-"]/div[3]/ul/li[1]', 'ftp_server': '//*[@id="menu-"]/div[3]/ul/li[2]', 'redirect_mail': '//*[@id="menu-"]/div[3]/ul/li[3]', 'smb_server': '//*[@id="menu-"]/div[3]/ul/li[4]', 'gitlab': '//*[@id="menu-"]/div[3]/ul/li[5]', 'artifactory': '//*[@id="menu-"]/div[3]/ul/li[6]'}, 'test_name_catalog_how_name_mail': True, 'test_user_name': 'Selen_user_16610', 'test_user_password': 'Ey*edEi@uf28429', 'test_grant_rights': True, 'test_api_key': 'kawd^*akjwdi7a^&)(((%$%wd123', 'test_protocol': '//*[@id="menu-"]/div[3]/ul/li[2]', 'test_server': '172.29.39.144', 'test_port': '8888'}}
-INFO     MPP-SELENIUM167400:logger.py:45 step: Нажал создать новое место публикации
-INFO     MPP-SELENIUM167400:logger.py:45 step: Ввёл название
-INFO     MPP-SELENIUM167400:logger.py:45 step: Ввёл описание
-INFO     MPP-SELENIUM167400:logger.py:45 step: Выбрал тип публикации
-INFO     MPP-SELENIUM167400:logger.py:45 ==== КОНЕЦ ТЕСТА ====
