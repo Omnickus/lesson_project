@@ -1,0 +1,6 @@
+INFO     MPP-SELENIUM584717:logger.py:45 ==== НАЧАЛО ТЕСТА ====
+INFO     MPP-SELENIUM584717:logger.py:45 ==== НАЧАЛО ТЕСТА ====
+INFO     MPP-SELENIUM584717:logger.py:45 test_page: Страница 'Выгрузка групп LDAP'
+INFO     MPP-SELENIUM584717:logger.py:45 test_name: Выгрузка группы LDAP/Редактирование/Удаление
+INFO     MPP-SELENIUM584717:logger.py:45 test_param: Тестовые значения mpp-controlers
+INFO     MPP-SELENIUM584717:logger.py:45 step: Ищу группу на странице

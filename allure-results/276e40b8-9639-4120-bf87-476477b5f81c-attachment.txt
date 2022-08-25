@@ -1,0 +1,17 @@
+INFO     MPP-SELENIUM528104:logger.py:45 ==== НАЧАЛО ТЕСТА ====
+INFO     MPP-SELENIUM528104:logger.py:45 test_page: Страница 'Разрешённые адреса'
+INFO     MPP-SELENIUM528104:logger.py:45 test_name: Создание/Редактирование/Удаление разрешённого адресата
+INFO     MPP-SELENIUM528104:logger.py:45 test_param: Тестовые значения {'login': 'Selen_Umikaiyat185539', 'email': 'Centrithis989871@yopmail.com', 'test_data_edit': {'login': 'Selen_Steelshade230267', 'email': 'Blackgrove822021@lind.org'}}
+INFO     MPP-SELENIUM528104:logger.py:45 step: Нажал кнопку добавить пользователя
+INFO     MPP-SELENIUM528104:logger.py:45 step: Ввёл логин
+INFO     MPP-SELENIUM528104:logger.py:45 step: Ввёл почтовый адрес
+INFO     MPP-SELENIUM528104:logger.py:45 step: Нажал сохранить
+INFO     MPP-SELENIUM528104:logger.py:45 step: Обновил страницу
+INFO     MPP-SELENIUM528104:logger.py:45 step: Ищу созданного пользователя
+INFO     MPP-SELENIUM528104:logger.py:45 step: Пользователь найден
+INFO     MPP-SELENIUM528104:logger.py:45 step: Удаляю тестового пользователя 
+INFO     MPP-SELENIUM528104:logger.py:45 step: Нажал удалить
+INFO     MPP-SELENIUM528104:logger.py:45 step: Нажал подтвердить удаление
+INFO     MPP-SELENIUM528104:logger.py:45 step: Обновил страницу
+INFO     MPP-SELENIUM528104:logger.py:45 result_suc: Маршрут удалён
+INFO     MPP-SELENIUM528104:logger.py:45 ==== КОНЕЦ ТЕСТА ====

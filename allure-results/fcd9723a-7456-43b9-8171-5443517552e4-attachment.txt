@@ -1,0 +1,8 @@
+INFO     MPP-SELENIUM103214:logger.py:45 ==== НАЧАЛО ТЕСТА ====
+INFO     MPP-SELENIUM103214:logger.py:45 test_page: Страница 'Управление сервисами'
+INFO     MPP-SELENIUM103214:logger.py:45 test_name: Запуск сервиса криптографическая обработка
+INFO     MPP-SELENIUM103214:logger.py:45 test_param: Тестовые значения Запуск сервиса криптографическая обработка
+INFO     MPP-SELENIUM103214:logger.py:45 step: Нажал запустить сервис
+INFO     MPP-SELENIUM103214:logger.py:45 step: Читаю сообщение
+INFO     MPP-SELENIUM103214:logger.py:45 result_suc: Сервис запустился
+INFO     MPP-SELENIUM103214:logger.py:45 ==== КОНЕЦ ТЕСТА ====

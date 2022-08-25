@@ -1,0 +1,18 @@
+INFO     MPP-SELENIUM157388:logger.py:45 ==== НАЧАЛО ТЕСТА ====
+INFO     MPP-SELENIUM157388:logger.py:45 test_page: Страница 'Маршруты'
+INFO     MPP-SELENIUM157388:logger.py:45 test_name: Выбор маршрутов
+INFO     MPP-SELENIUM157388:logger.py:45 test_param: Тестовые значения: маршрут для каждого типа поставки выбирается случайно
+INFO     MPP-SELENIUM157388:logger.py:45 step: Записал начальные значения
+INFO     MPP-SELENIUM157388:logger.py:45 step: Кликнул редактировать
+INFO     MPP-SELENIUM157388:logger.py:45 step: Открыл выбор маршрутов для Хранилище артефактов
+INFO     MPP-SELENIUM157388:logger.py:45 step: Выбрал маршрут
+INFO     MPP-SELENIUM157388:logger.py:45 step: Открыл выбор маршрутов для Хранилище исходного кода
+INFO     MPP-SELENIUM157388:logger.py:45 step: Выбрал маршрут
+INFO     MPP-SELENIUM157388:logger.py:45 step: Открыл выбор маршрутов для Каталог
+INFO     MPP-SELENIUM157388:logger.py:45 step: Выбрал маршрут
+INFO     MPP-SELENIUM157388:logger.py:45 step: Нажал сохранить
+INFO     MPP-SELENIUM157388:logger.py:45 step: Обновил страницу
+INFO     MPP-SELENIUM157388:logger.py:45 step: Проверяю, что все значения сохранились
+INFO     MPP-SELENIUM157388:logger.py:45 result_suc: Выбранные маршруты сохранились
+INFO     MPP-SELENIUM157388:logger.py:45 step: Возвращаю начальные значения
+INFO     MPP-SELENIUM157388:logger.py:45 ==== КОНЕЦ ТЕСТА ====
