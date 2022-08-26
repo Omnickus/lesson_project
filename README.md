@@ -18,14 +18,14 @@
 2) pytest -vsm system --url https://172.78.45.33 --browser chrome --bv 104.0 --vnc True --logs False
 
 Список параметров, которые могут быть переданы в тест \
-4) Путь до драйвера на вашей машине  --driver ~/drivers/chrome
-5) Браузер (opera, chrome, firefox) --browser opera
-6) Базовый URL тестируемого стенда --url https://127.0.0.1:80/
-7) URL до selenoid, если установлен --executor 127.0.0.1
-8) Трансляция теста в selenoid --vnc True
-9) Логирование в selenoid --logs True
-10) Запись видео selenoid"ом --videos False
-11) Версия браузера для selenoid --bv 104.0
+4) Путь до драйвера на вашей машине  --driver ~/drivers/chrome \
+5) Браузер (opera, chrome, firefox) --browser opera \
+6) Базовый URL тестируемого стенда --url https://127.0.0.1:80/ \
+7) URL до selenoid, если установлен --executor 127.0.0.1 \
+8) Трансляция теста в selenoid --vnc True \
+9) Логирование в selenoid --logs True \
+10) Запись видео selenoid"ом --videos False  \
+11) Версия браузера для selenoid --bv 104.0 
 
 
 
