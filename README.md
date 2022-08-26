@@ -25,7 +25,7 @@
 8) Трансляция теста в selenoid --vnc True \
 9) Логирование в selenoid --logs True \
 10) Запись видео selenoid"ом --videos False  \
-11) Версия браузера для selenoid --bv 104.0 \
+11) Версия браузера для selenoid --bv 104.0 
 
 
 
