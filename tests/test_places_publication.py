@@ -24,3 +24,4 @@ class Test_places_publication:
             Logger(f'{config.indicator_test_param} Тестовое значение {test_data}').infolog
             name_new_publications = Places_publication(driver).create_new_place_publication(test_data)
         start()
+

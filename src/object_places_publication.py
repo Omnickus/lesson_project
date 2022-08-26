@@ -1,13 +1,10 @@
-from lib2to3.pgen2 import driver
 import config
 from src.base.base_page import Base_page
-import allure
 
-# Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
+from src.base.constructor import Find_element    
+from src.base.constructor import Placeholder     
+from src.base.constructor import Actions         
+from src.base.logger import Logger              
 
 
 class Places_publication(Base_page):

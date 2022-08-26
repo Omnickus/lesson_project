@@ -5,12 +5,10 @@ from src.base.base_page import Base_page
 import allure
 from allure_commons.types import AttachmentType
 
-# Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
-from src.base.logger import log_decorator        # Обёртка для логов
+from src.base.constructor import Find_element   
+from src.base.constructor import Placeholder    
+from src.base.constructor import Actions        
+from src.base.logger import Logger             
 
 
 class Localuser(Base_page):
@@ -185,9 +183,6 @@ class Localuser(Base_page):
     def create_new_user(self, test_name, path, test_data):
         try:
             self._driver.get(self._driver.url + self.__url)
-            # Logger(f'{config.indicator_test_page} {self._report}').infolog
-            # Logger(f'{config.indicator_test_name} {test_name["test_name"]}').infolog
-            # Logger(f'{config.indicator_test_param} Тестовые значения {test_data["test_data"]}').infolog
 
             el = Find_element(driver = self._driver, path = path['path']['path_to_el_but_create'], wtime = 20).by_xpath_to_be_clickable_no_scroll
             Actions(driver = self._driver).actions_click(el)

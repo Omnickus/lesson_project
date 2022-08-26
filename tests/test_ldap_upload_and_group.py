@@ -18,3 +18,4 @@ class Test_Ldap_upload_and_group:
             Ldap_upload_and_group(driver).upload_group_ldap(name_group)
         start()
 
+

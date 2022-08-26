@@ -64,7 +64,6 @@ class Report_docx:
 
         """ Разбиение на страницы в отчёте """
         sections = []
-        #Logger(f'\n{tmp_file}\n').infolog
         for i in tmp_file:
             try:
                 sections.append(tmp_file[i][config.indicator_test_page])
@@ -75,19 +74,11 @@ class Report_docx:
 
         structure_preparation = {}
         for section in sections:
-            #Logger(f'Секция sections = {section}').debuglog
             for i in tmp_file:
-                #Logger(f'Итератор = {i}').debuglog
-                #Logger(f'Секция tmp_file = {tmp_file[i][config.indicator_test_page]}').debuglog
-                
                 if section == tmp_file[i][config.indicator_test_page]:
                     try:
                         if structure_preparation[section]:
                             for step in range(len(structure_preparation[section]['section_steps'])):
-                                #Logger(f'step = {step}').debuglog
-                                #Logger(f"left = {structure_preparation[section]['section_steps'][step]['test_steps']}").debuglog
-                                #Logger(f"right = {tmp_file[i][config.indicator_test_step]}").debuglog
-                                #Logger(f'structure = {structure_preparation}').debuglog
                                     
                                 if structure_preparation[section]['section_steps'][step]['test_steps'] == tmp_file[i][config.indicator_test_step]:
                                     try:
@@ -100,7 +91,6 @@ class Report_docx:
                                         Logger(f'Добавил 1').debuglog
                                     except Exception as e:
                                         pass
-                                        #Logger(f'Непредвиденная ошибка {e}').debuglog
 
                                 elif structure_preparation[section]['section_steps'][step]['test_steps'] != tmp_file[i][config.indicator_test_step]:
                                     Logger(f'Зашёл в else').debuglog
@@ -123,8 +113,7 @@ class Report_docx:
                                     added_step = []
                                     for b in structure_preparation[section]['section_steps']:
                                         added_step.append(b['test_steps'])
-                                    #Logger(f'Добавил шаги {added_step}').debuglog
-                                    #Logger(f"Шаг для стравнения {tmp_file[i][config.indicator_test_step]}").debuglog
+
                                     if tmp_file[i][config.indicator_test_step] not in added_step:
                                         structure_preparation[section]['section_steps'].append(
                                             {
@@ -140,7 +129,6 @@ class Report_docx:
                                         
 
                     except KeyError as e:
-                        #Logger(f'Ошибка {e}. Первый цикл').debuglog
                         error_coter = None
                         try:
                             tmp_file[i][config.indicator_test_result_suc]
@@ -168,9 +156,6 @@ class Report_docx:
                                 }]
                             }],
                         }
-                        #Logger(f'Создал основу {structure_preparation}').debuglog
-        
-        #Logger(f'\n{structure_preparation}\n').infolog
 
         document = Document()
         sec = document.sections[-1]
@@ -186,7 +171,6 @@ class Report_docx:
 
         for section in structure_preparation:
             document.add_heading(f'Страница:\n {structure_preparation[section]["name"]}', level=5)
-            #Logger(f"Добавил раздел в отчёт {structure_preparation[section]['name']}").infolog
             
             for case in structure_preparation[section]['section_steps']:
                 correct_steps = ''

@@ -4,11 +4,11 @@ import allure
 from allure_commons.types import AttachmentType
 
 # Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
-from src.base.logger import log_decorator        # Обёртка для логов
+from src.base.constructor import Find_element   
+from src.base.constructor import Placeholder   
+from src.base.constructor import Actions        
+from src.base.logger import Logger            
+from src.base.logger import log_decorator     
 
 
 class Service_management(Base_page):

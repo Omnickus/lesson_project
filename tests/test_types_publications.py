@@ -1,10 +1,9 @@
-# Импорты для pytest
 import pytest
 import allure
 import config
 
 from src.object_types_publications import Types_publications
-from src.base.logger import Logger               # Логгер
+from src.base.logger import Logger    
 from src.base.logger import log_decorator
 
 

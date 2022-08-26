@@ -1,16 +1,14 @@
 import config
 from src.base.base_page import Base_page
 
-# Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
+from src.base.constructor import Find_element    
+from src.base.constructor import Placeholder     
+from src.base.constructor import Actions        
+from src.base.logger import Logger           
 import allure
 from allure_commons.types import AttachmentType
 
 import random
-import time
 
 class Types_publications(Base_page):
 
@@ -133,7 +131,6 @@ class Types_publications(Base_page):
 
         Logger(f'{config.indicator_test_result_suc} Созданный тип публикации найден').infolog
 
-        # Возвращаю имя созданного типа публикации для использования в других тестах, например удалении или редактировании
         return test_data['test_data']['name']
 
 

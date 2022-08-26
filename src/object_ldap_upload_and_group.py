@@ -3,12 +3,11 @@ from src.base.base_page import Base_page
 from selenium.common.exceptions import TimeoutException
 import allure
 
-# Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
-from src.base.logger import log_decorator        # Обёртка для логов
+from src.base.constructor import Find_element  
+from src.base.constructor import Placeholder  
+from src.base.constructor import Actions      
+from src.base.logger import Logger    
+from src.base.logger import log_decorator  
 
 
 
@@ -51,17 +50,4 @@ class Ldap_upload_and_group(Base_page):
 
         Logger(f'{config.indicator_test_result_suc} Группа выгружена').infolog
 
-        # self._driver.refresh()
-        # self._driver.get(self._driver.url + self.__url_group)
-        # self.time_out_after_refresh
-        # Logger(f'{config.indicator_test_step} Перешёл на страницу {self.__url_group}').infolog
-
-
-        # dinamic_path = Find_element(driver = self._driver).dynamic_path(text = group)
-        # print()
-        #el = Find_element(driver = self._driver, path = f'//*[@id="tab-panel-tabpane-groups"]/div/div//*[contains(text(),"{group}")]', wtime = 15).by_xpath_to_be_visibility
-
-
-
-        time.sleep(10)
         pass

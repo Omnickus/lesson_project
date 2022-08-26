@@ -3,17 +3,14 @@ from src.base.logger import Logger
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys # Работа с клаватурой
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
 import itertools
 import re
 
-# Настройки конфигурации
 import config
 
-
-# Другие импорты
 import time
 
 
@@ -57,10 +54,11 @@ class Find_element:
             Logger(f"Не возможно создать объект класса Find_element. Ошибка - {e}.").debuglog
             return None
 
+
     def __init__(self, path = None, wtime = None, driver = None):
-        self._path = path               # Путь до елемента (xpath, id, selector и тд.)
-        self._wtime = wtime             # Время ожидания элемента на странице (Если None будет использоваться время из config, переменная default_timeout)
-        self._driver = driver           # Ссылка на объект драйвера
+        self._path = path               
+        self._wtime = wtime             
+        self._driver = driver           
         if wtime == None:
             self._wtime = int(config.default_timeout)
     
@@ -137,9 +135,6 @@ class Find_element:
         if i == config.jump_count:
             return None
         
-
-
-
 
 class Placeholder:
     """
@@ -229,6 +224,4 @@ class Actions:
             for i in range(0, counter):
                 self._actions.key_down(Keys.CONTROL)
                 self._actions.send_keys(side)
-        pass
-
     

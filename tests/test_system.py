@@ -1,4 +1,3 @@
-# Импорты для pytest
 import pytest
 import allure
 
@@ -69,5 +68,4 @@ class Test_system:
             def start():
                 System(driver).object_system(name_test = name_test, path = path, text = i['text'], status = i['status'])
             start()
-
 

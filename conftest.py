@@ -7,8 +7,6 @@ from selenium.webdriver.firefox.service import Service as FFService
 from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.safari.service import Service as SafariService
 
-from selenium.webdriver.support.events import AbstractEventListener, EventFiringWebDriver
-
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -20,19 +18,10 @@ import pathlib
 import time
 
 
-class My_listner(AbstractEventListener):
-    pass
-    # def before_navigate_to(self, url, driver):
-    #     print('Фокусируюсь на элементе ' + url + '. ')
-    # def after_navigate_to(self, url, driver):
-    #     print('Покинул фокус с элемента ' + url + '. ')
-
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome")
     parser.addoption("--url", action="store", default=Url_page.authorization_page)
     parser.addoption("--driver", action="store", default="/opt/drivers/")
-    parser.addoption("--report", action="store", default="no")
-    #parser.addoption("--headless", action="store", default="no")
     parser.addoption("--executor", action="store", default='127.0.0.1')
     parser.addoption("--vnc", action="store_true", default=True)
     parser.addoption("--logs", action="store_true", default=False)
@@ -41,7 +30,6 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def driver(request):
-    # Сбор параметров запуска для pytest
     browser = request.config.getoption("--browser")
     url = request.config.getoption("--url")
     drivers = request.config.getoption("--driver")
@@ -50,8 +38,6 @@ def driver(request):
     vnc = request.config.getoption("--vnc")
     logs = request.config.getoption("--logs")
     videos = request.config.getoption("--videos")
-
-    #options.add_argument("--headless") ??
 
     if executor == None:
         if browser == "chrome":

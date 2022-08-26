@@ -64,3 +64,4 @@ class Base_page:
 
     def random_int(self, _from, _before):
         return int(random.randint(_from, _before))
+

@@ -19,3 +19,4 @@ class Test_allowed_addresses:
             name_new_allowed_address = Allowed_addresses(driver).create_new_user(test_name, path, test_data)
             Allowed_addresses(driver = driver).del_allowed_address(text = name_new_allowed_address)
         start()
+

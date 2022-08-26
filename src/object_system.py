@@ -4,11 +4,11 @@ import time
 import allure
 from allure_commons.types import AttachmentType
 
-# Импорт вспомогательных классов
-from src.base.constructor import Find_element    # Поиск элементов
-from src.base.constructor import Placeholder     # Взаимодействие с текстовыми полями, чек-боксами, радиокнопками и тд.
-from src.base.constructor import Actions         # Разные действия
-from src.base.logger import Logger               # Логгер
+
+from src.base.constructor import Find_element   
+from src.base.constructor import Placeholder   
+from src.base.constructor import Actions         
+from src.base.logger import Logger              
 from src.base.logger import log_decorator
 
 class System(Base_page):
@@ -37,16 +37,6 @@ class System(Base_page):
                         'special_char' :    [{ 'text' : config.default_special_char, 'status' : True }],
                     }
                 ),
-                # (   {'test_name' : 'пароль для подключения к серверу ldap'},
-                #     {'path_to_el' : '//*[@id="settings_setup_field_ldap_password"]'},
-                #     {
-                #         'correct_test' :    [{ 'text' : config.default_passwd, 'status' : True }],
-                #         'string' :          [{ 'text' : config.default_string, 'status': True }],
-                #         'integer' :         [{ 'text' : config.default_integer, 'status' : True }],
-                #         'empty' :           [{ 'text' : config.default_emptystr, 'status' : False }],
-                #         'special_char' :    [{ 'text' : config.default_special_char, 'status' : True }],
-                #     }
-                # ),
                 (   {'test_name' : 'Сервер ldap'},
                     {'path_to_el' : '//*[@id="settings_setup_field_ldap_host"]'},
                     {
@@ -307,16 +297,6 @@ class System(Base_page):
                         'special_char' :    [{ 'text' : config.default_special_char, 'status' : False }],
                     }
                 ),
-                # (   {'test_name' : 'Пароль пользователя на почтовом сервере'},
-                #     {'path_to_el' : '//*[@id="settings_setup_field_mail_pass"]'},
-                #     {
-                #         'correct_test' :    [{ 'text' : 'false', 'status' : True }],
-                #         'string' :          [{ 'text' : config.default_string, 'status': True }],
-                #         'integer' :         [{ 'text' : config.default_integer, 'status' : True }],
-                #         'empty' :           [{ 'text' : config.default_emptystr, 'status' : False }],
-                #         'special_char' :    [{ 'text' : config.default_special_char, 'status' : True }],
-                #     }
-                # ),
                 (   {'test_name' : 'Входящий каталог обработки'},
                     {'path_to_el' : '//*[@id="settings_setup_field_module_income_folder"]'},
                     {
@@ -437,16 +417,6 @@ class System(Base_page):
                         'special_char' :    [{ 'text' : config.default_special_char, 'status' : False }],
                     }
                 ),
-                # (   {'test_name' : 'Пароль сессии Янтарь'},
-                #     {'path_to_el' : '//*[@id="settings_setup_field_amber_cert_pass"]'},
-                #     {
-                #         'correct_test' :    [{ 'text' : 'INFO', 'status' : True }],
-                #         'string' :          [{ 'text' : config.default_string, 'status': True }],
-                #         'integer' :         [{ 'text' : config.default_integer, 'status' : True }],
-                #         'empty' :           [{ 'text' : config.default_emptystr, 'status' : False }],
-                #         'special_char' :    [{ 'text' : config.default_special_char, 'status' : True }],
-                #     }
-                # ),
                 (   {'test_name' : 'Порт Янтарь'},
                     {'path_to_el' : '//*[@id="settings_setup_field_amber_port"]'},
                     {
